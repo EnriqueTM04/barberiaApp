@@ -11,6 +11,12 @@ class LoginController {
     public static function login(Router $router) {
 
         $alertas = [];
+
+        if(isset($_SERVER['admin'])) {
+            header('Location: /admin');
+        } else if(isset($_SESSION['login'])) {
+            header('Location: /cita');
+        }
         
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $auth = new Usuario($_POST);
@@ -60,6 +66,12 @@ class LoginController {
 
     public static function forgot(Router $router) {
 
+        if(isset($_SERVER['admin'])) {
+            header('Location: /admin');
+        } else if(isset($_SESSION['login'])) {
+            header('Location: /cita');
+        }
+
         $alertas = [];
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -96,6 +108,12 @@ class LoginController {
     }
 
     public static function recuperar(Router $router) {
+
+        if(isset($_SERVER['admin'])) {
+            header('Location: /admin');
+        } else if(isset($_SESSION['login'])) {
+            header('Location: /cita');
+        }
         
         $alertas = [];
         $error = false;
@@ -139,6 +157,13 @@ class LoginController {
     }
 
     public static function crear(Router $router) {
+
+        if(isset($_SERVER['admin'])) {
+            header('Location: /admin');
+        } else if(isset($_SESSION['login'])) {
+            header('Location: /cita');
+        }
+        
         $usuario = new Usuario;
 
         $alertas = [];
