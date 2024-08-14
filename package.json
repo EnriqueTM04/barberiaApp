@@ -1,8 +1,8 @@
 {
   "name": "app-salon-php-mvc-sass",
   "version": "1.0.0",
-  "description": "AppSalon - Curso Desarrollo web Completo",
-  "author": "Juan De la torre @codigoconjuan",
+  "description": "Barberia AppSalon con MVC",
+  "author": "Enrique Taboada",
   "main": "index.js",
   "type": "module",
   "scripts": {
